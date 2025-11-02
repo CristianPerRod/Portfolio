@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristian Pérez Rodriguez</title>
+  <meta name="description" content="Portfolio de Cristian Pérez Rodriguez - Técnico administrador de redes y sistemas microinformáticos" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    
+    /* ===== VARIABLES CSS ===== */
+    :root {
+      --color-primary: #00D9FF;
+      --color-secondary: #7B2FFF;
+      --color-accent: #FF2E63;
+      --color-bg: #0A0E27;
+      --color-surface: #151934;
+      --text-primary: #E4E4E7;
+      --text-secondary: #A1A1AA;
+      --text-accent: #00D9FF;
+      --text-on-primary: #ffffff;
+      
+
+      --font-primary: 'JetBrains Mono', 'Fira Code', code;
+      --font-heading: 'Space Grotesk', system-ui, sans-serif;
+      --font-code: 'JetBrains Mono', code;
+
+      --fs-xs: 0.75rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-lg: 1.125rem;
+      --fs-xl: 1.25rem;
+      --fs-2xl: 1.5rem;
+      --fs-3xl: 1.875rem;
+      --fs-4xl: 2.5rem;
+
+      --fw-normal: 400;
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+
+      --max-w: 1280px;
+      --sp-xs: 0.17rem;
+      --sp-sm: 0.34rem;
+      --sp-md: 0.5rem;
+      --sp-lg: 0.67rem;
+      --sp-xl: 1rem;
+
+      --br-sm: 0.5rem;
+      --br-md: 0.75rem;
+      --br-lg: 1rem;
+      --br-xl: 1.5rem;
+
+      --shadow-sm: 0 0 10px rgb(0 217 255 / 0.1);
+      --shadow-md: 0 0 20px rgb(0 217 255 / 0.15);
+      --shadow-lg: 0 0 30px rgb(0 217 255 / 0.2);
+      --shadow-xl: 0 0 40px rgb(123 47 255 / 0.25);
+    }
+
+    /* ===== RESET Y BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-primary);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-normal);
+      line-height: 1.6;
+      color: var(--text-primary);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+
+    /* ===== CLASES .tpl-* (copiadas de TemplateTheme.tsx) ===== */
+    .tpl-container { 
+      max-width: var(--max-w); 
+      margin: 0 auto; 
+      padding: var(--sp-md); 
+    }
+    
+    .tpl-surface { 
+      background: var(--color-surface); 
+      border-radius: var(--br-md); 
+      box-shadow: var(--shadow-sm); 
+    }
+    
+    .tpl-heading { 
+      font-family: var(--font-heading); 
+      color: var(--text-primary); 
+    }
+    
+    .tpl-subtext { 
+      color: var(--text-secondary); 
+    }
+    
+    .tpl-btn-primary { 
+      background: var(--color-primary); 
+      color: white; 
+      border-radius: var(--br-sm); 
+      padding: 0.5rem 0.75rem; 
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .tpl-btn-outline { 
+      border: 1px solid rgba(0,0,0,.12); 
+      color: var(--text-primary); 
+      border-radius: var(--br-sm); 
+      padding: 0.5rem 0.75rem; 
+      background: transparent; 
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .tpl-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: var(--fs-sm);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      color: var(--color-accent);
+      border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
+      text-decoration: none;
+    }
+
+    .tpl-card { 
+      background: var(--color-surface); 
+      border-radius: var(--br-lg); 
+      box-shadow: var(--shadow-md); 
+      overflow: hidden; 
+    }
+
+    .tpl-header,
+    .tpl-header-bg {
+      background: #00D9FF;
+      color: var(--text-on-primary, #fff);
+    }
+
+    /* ===== VARIANTES ===== */
+    .variant-compact .tpl-surface,
+    .variant-compact .tpl-card {
+      padding: var(--sp-sm) !important;
+    }
+
+    .variant-expanded .tpl-surface,
+    .variant-expanded .tpl-card {
+      padding: var(--sp-xl) !important;
+    }
+
+    .variant-minimal .tpl-surface,
+    .variant-minimal .tpl-card {
+      padding: var(--sp-xs) !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
+    .variant-card .tpl-surface,
+    .variant-card .tpl-card {
+      padding: var(--sp-lg) !important;
+      border-radius: var(--br-xl) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .tpl-container { padding: var(--sp-sm); }
+      .tpl-header { padding: var(--sp-lg) var(--sp-sm); }
+    }
+
+    
+  
+    
+    .tpl-container { max-width: var(--max-w); margin: 0 auto; padding: var(--sp-md); }
+    .tpl-surface { background: var(--color-surface); border-radius: var(--br-md); box-shadow: var(--shadow-sm); }
+    .tpl-heading { font-family: var(--font-heading); color: var(--text-primary); }
+    .tpl-subtext { color: var(--text-secondary); }
+    .tpl-btn-primary { background: var(--color-primary); color: white; border-radius: var(--br-sm); padding: 0.5rem 0.75rem; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .tpl-btn-outline { border: 1px solid rgba(0,0,0,.12); color: var(--text-primary); border-radius: var(--br-sm); padding: 0.5rem 0.75rem; background: transparent; cursor: pointer; text-decoration: none; display: inline-block; }
+    .tpl-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; font-size: var(--fs-sm); background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent); border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent); }
+    .tpl-card { background: var(--color-surface); border-radius: var(--br-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .tpl-header, .tpl-header-bg { background: linear-gradient(135deg, #00D9FF, #7B2FFF); color: var(--text-on-primary, #fff); }
+    
+    .variant-compact .tpl-surface, .variant-compact .tpl-card { padding: var(--sp-sm) !important; }
+    .variant-expanded .tpl-surface, .variant-expanded .tpl-card { padding: var(--sp-xl) !important; }
+    .variant-minimal .tpl-surface, .variant-minimal .tpl-card { padding: var(--sp-xs) !important; border: none !important; box-shadow: none !important; background: transparent !important; }
+    .variant-card .tpl-surface, .variant-card .tpl-card { padding: var(--sp-lg) !important; border-radius: var(--br-xl) !important; box-shadow: var(--shadow-lg) !important; }
+  
+  </style>
+</head>
+<body>
+  <div style="--color-primary:#00D9FF;--color-secondary:#7B2FFF;--color-accent:#FF2E63;--color-bg:#0A0E27;--color-surface:#151934;--text-primary:#E4E4E7;--text-secondary:#A1A1AA;--font-primary:&#x27;Inter&#x27;, -apple-system, sans-serif;--font-heading:&#x27;Inter&#x27;, -apple-system, sans-serif;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-lg:1.125rem;--fs-xl:1.25rem;--fs-2xl:1.5rem;--fs-3xl:1.875rem;--fs-4xl:2.25rem;--fw-normal:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;--max-w:1200px;--sp-xs:0.5rem;--sp-sm:1rem;--sp-md:1.5rem;--sp-lg:2rem;--sp-xl:3rem;--br-sm:0.375rem;--br-md:0.5rem;--br-lg:0.75rem;--br-xl:1rem;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1);background-color:var(--color-bg);color:var(--text-primary);font-family:var(--font-primary)" class="template-scope"><style>
+    .tpl-container { max-width: var(--max-w); margin: 0 auto; padding: var(--sp-md); }
+    .tpl-surface { background: var(--color-surface); border-radius: var(--br-md); box-shadow: var(--shadow-sm); }
+    .tpl-heading { font-family: var(--font-heading); color: var(--text-primary); }
+    .tpl-subtext { color: var(--text-secondary); }
+    .tpl-btn-primary { background: var(--color-primary); color: white; border-radius: var(--br-sm); padding: 0.5rem 0.75rem; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .tpl-btn-outline { border: 1px solid rgba(0,0,0,.12); color: var(--text-primary); border-radius: var(--br-sm); padding: 0.5rem 0.75rem; background: transparent; cursor: pointer; text-decoration: none; display: inline-block; }
+    .tpl-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; font-size: var(--fs-sm); background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent); border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent); }
+    .tpl-card { background: var(--color-surface); border-radius: var(--br-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .tpl-header, .tpl-header-bg { background: linear-gradient(135deg, #667EEA, #764BA2); color: var(--text-on-primary, #fff); }
+    
+    .variant-compact .tpl-surface, .variant-compact .tpl-card { padding: var(--sp-sm) !important; }
+    .variant-expanded .tpl-surface, .variant-expanded .tpl-card { padding: var(--sp-xl) !important; }
+    .variant-minimal .tpl-surface, .variant-minimal .tpl-card { padding: var(--sp-xs) !important; border: none !important; box-shadow: none !important; background: transparent !important; }
+    .variant-card .tpl-surface, .variant-card .tpl-card { padding: var(--sp-lg) !important; border-radius: var(--br-xl) !important; box-shadow: var(--shadow-lg) !important; }
+  </style><div style="--color-primary:#00D9FF;--color-secondary:#7B2FFF;--color-accent:#FF2E63;--color-bg:#0A0E27;--color-surface:#151934;--surface-variant:#1E2440;--text-primary:#E4E4E7;--text-secondary:#A1A1AA;--text-accent:#00D9FF;--text-muted:#71717A;--text-inverse:#0A0E27;--text-on-primary:#ffffff;--font-primary:&#x27;JetBrains Mono&#x27;, &#x27;Fira Code&#x27;, code;--font-heading:&#x27;Space Grotesk&#x27;, system-ui, sans-serif;--ff-mono:ui-monospace, SFMono-Regular, Menlo, monospace;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-lg:1.125rem;--fs-xl:1.25rem;--fs-2xl:1.5rem;--fs-3xl:1.875rem;--fs-4xl:2.5rem;--fs-5xl:3rem;--fs-6xl:4rem;--ls-tighter:-0.05em;--ls-tight:-0.025em;--ls-normal:0;--ls-wide:0.025em;--ls-wider:0.05em;--lh-tight:1.3;--lh-snug:1.4;--lh-normal:1.6;--lh-relaxed:1.75;--lh-loose:2;--sp-xs:0.17rem;--sp-sm:0.34rem;--sp-md:0.5rem;--sp-lg:0.67rem;--sp-xl:1rem;--sp-2xl:1.34rem;--br-sm:0.5rem;--br-md:0.75rem;--br-lg:1rem;--br-xl:1.5rem"><div class=""><header class="tpl-header tpl-header-bg" aria-label="Encabezado del portafolio" style="position:relative;isolation:isolate;overflow:hidden;padding-top:clamp(2rem, 5vw, var(--sp-lg));padding-bottom:clamp(2rem, 5vw, var(--sp-lg));margin-bottom:var(--sp-md);background:linear-gradient(135deg, #00D9FF, #7B2FFF);color:var(--text-on-primary, #fff)"><div class="tpl-container" style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--sp-md)"><img src="https://ibb.co/CdWJQ5V" alt="Foto de perfil de Cristian Pérez Rodriguez" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.3);box-shadow:0 4px 12px rgba(0,0,0,0.15);flex-shrink:0"/><div style="display:flex;flex-direction:column;gap:var(--sp-sm);align-items:center;flex:1"><h1 class="tpl-heading" style="font-size:clamp(2rem, 5vw, var(--fs-3xl));font-weight:700;line-height:1.1;letter-spacing:var(--ls-tight, -0.02em);color:var(--text-on-primary, #fff);text-shadow:0 2px 4px rgba(0, 0, 0, 0.2);margin:0">Cristian Pérez Rodriguez</h1><p class="tpl-subtext" style="font-size:clamp(1rem, 2.5vw, var(--fs-lg));opacity:0.95;color:var(--text-on-primary, #fff);margin:0">Técnico administrador de redes y sistemas microinformáticos</p><div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:var(--sp-sm);justify-content:center"><a href="mailto:cperezrodriguez110@gmail.com" class="tpl-btn-primary" aria-label="Enviar email a Cristian Pérez Rodriguez" style="display:inline-flex;align-items:center;gap:8px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><span>Contactar</span></a><a href="#projects" class="tpl-btn-outline" aria-label="Ver mis proyectos" style="display:inline-flex;align-items:center;gap:8px;border-color:rgba(255,255,255,0.4);color:var(--text-on-primary, #fff);background-color:transparent"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg><span>Ver proyectos</span></a><div style="width:1px;height:24px;background-color:rgba(255, 255, 255, 0.3)"></div><div class="" style="display:flex;gap:12px;flex-wrap:wrap"><a href="https://www.linkedin.com/in/cristian-perez-rodriguez-05948b395/" target="_blank" rel="noopener noreferrer" style="width:48px;height:48px;border-radius:50%;background-color:rgba(255, 255, 255, 0.2);border:1px solid rgba(255, 255, 255, 0.3);display:flex;align-items:center;justify-content:center;transition:all 0.2s;cursor:pointer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div></div></div></div><svg aria-hidden="true" viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:32px;opacity:0.15;pointer-events:none;z-index:0"><path d="M0,64 C240,128 480,0 720,32 C960,64 1200,176 1440,96 L1440,160 L0,160 Z" fill="currentColor"></path></svg></header></div><div class="tpl-container" style="display:grid;gap:var(--sp-md);grid-template-columns:minmax(0,1fr);align-items:start"><main style="display:grid;gap:var(--sp-lg)"><div class=""><section id="about" style="position:relative;z-index:1;background:var(--color-surface, #fff);padding-top:var(--sp-lg);padding-bottom:var(--sp-lg)"><div class="tpl-container"><h2 class="tpl-heading" style="font-size:var(--fs-2xl)">Sobre mí</h2></div><div class="tpl-container"><div class="tpl-surface" style="padding:0"><p class="tpl-subtext" style="font-size:var(--fs-base)">Profesional proactivo, con gran capacidad de aprendizaje y pasión por la formación continua.
+Recientemente titulado en el curso IFCT0210 de nivel 2, con motivación para iniciar una carrera en el
+sector de la informática y las comunicaciones. Orientado a la resolución de problemas, el trabajo en
+equipo y la mejora constante de habilidades técnicas y personales.</p></div></div></section></div><div class=""></div><div class=""><section style="padding-top:var(--sp-lg);padding-bottom:var(--sp-lg)"><div class="tpl-container"><h2 class="tpl-heading" style="font-size:var(--fs-2xl);margin-bottom:var(--sp-md)">Habilidades</h2><div style="display:grid;gap:var(--sp-md);grid-template-columns:repeat(1, minmax(0, 1fr));align-items:start"><div class="tpl-surface" style="padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-sm)"><h3 class="tpl-heading" style="font-size:var(--fs-lg);margin:0">Gestión de sistemas</h3><div class="flex flex-wrap gap-2 "><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Conocimientos y resolución de Tickets con GLPI</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Monitorización con Zabbix-server</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Active Directory</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>copias de seguridad y restauración de datos</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>conexión y configuración de dispositivos en red</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>instalación y configuración de sistemas operativos (Windows y Linux)</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>actualización y mantenimiento de software</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>instalación y configuración de redes locales</span></div></div><div class="tpl-surface" style="padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-sm)"><h3 class="tpl-heading" style="font-size:var(--fs-lg);margin:0">Seguridad Informática </h3><div class="flex flex-wrap gap-2 "><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Análisis de tráfico de red con WhireShark y Nmap</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Seguridad básica en equipos y redes</span></div></div><div class="tpl-surface" style="padding:var(--sp-md);display:flex;flex-direction:column;gap:var(--sp-sm)"><h3 class="tpl-heading" style="font-size:var(--fs-lg);margin:0">Conocimientos técnicos </h3><div class="flex flex-wrap gap-2 "><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Montaje y configuración de Máquinas Virtuales ( Linux</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Fedora</span><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"><span class="shrink-0">⚡</span>Ubuntu).
+Gestión de sistemas operativos.
+Principios básicos de virtualización.</span></div></div></div></div></section></div></main></div><footer style="background:var(--color-primary);color:white"><div class=""><footer style="background:linear-gradient(135deg, #00D9FF, #7B2FFF);color:var(--text-on-primary, #fff)"><div class="tpl-container"><div style="display:flex;flex-direction:column;align-items:center;gap:var(--sp-md)"><div class="" style="display:flex;gap:16px;flex-wrap:wrap"><a href="https://www.linkedin.com/in/cristian-perez-rodriguez-05948b395/" target="_blank" rel="noopener noreferrer" style="width:48px;height:48px;border-radius:50%;background-color:rgba(0, 0, 0, 0.05);border:1px solid rgba(0, 0, 0, 0.1);display:flex;align-items:center;justify-content:center;transition:all 0.2s;cursor:pointer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="mailto:cperezrodriguez110@gmail.com" style="width:48px;height:48px;border-radius:50%;background-color:rgba(0, 0, 0, 0.05);border:1px solid rgba(0, 0, 0, 0.1);display:flex;align-items:center;justify-content:center;transition:all 0.2s;cursor:pointer" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></a></div><div style="text-align:center"><p style="color:rgba(255, 255, 255, 0.95);font-weight:500;font-size:var(--fs-base);margin:0">Cristian Pérez Rodriguez</p><p style="color:rgba(255, 255, 255, 0.7);font-size:var(--fs-sm);margin-top:4px;margin-bottom:0">© 2025 • Todos los derechos reservados</p></div><div style="display:flex;align-items:center;gap:8px;color:rgba(255, 255, 255, 0.6);font-size:var(--fs-xs)"><span>Hecho con</span><span style="color:#ef4444;display:flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></span><span>usando React y TypeScript</span></div></div></div></footer></div></footer></div></div>
+</body>
+</html>
